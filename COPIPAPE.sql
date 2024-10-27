@@ -32,7 +32,7 @@ CREATE TABLE Proveedor(
 	Pais VARCHAR(3) NOT NULL, 
 	EntidadFederativa VARCHAR (60) NOT NULL,
 	Ciudad VARCHAR(50) NOT NULL,
-	Dirección VARCHAR(200) NOT NULL,
+	DirecciÃ³n VARCHAR(200) NOT NULL,
 	CP VARCHAR (5) NOT NULL ,
 	Telefono VARCHAR(10),
 	CorreoE VARCHAR (25),
@@ -86,7 +86,7 @@ CREATE TABLE Empleado(
 	Pais VARCHAR(3) NOT NULL, 
 	EntidadFederativa VARCHAR (60) NOT NULL,
 	Ciudad VARCHAR(60) NOT NULL,
-	Dirección VARCHAR(200) NOT NULL,
+	DirecciÃ³n VARCHAR(200) NOT NULL,
 	Telefono VARCHAR(10) UNIQUE NULL,
 	CorreoE VARCHAR (25) UNIQUE NULL,
 	Salario DECIMAL(10,2) NOT NULL CHECK (Salario >= 5393.50),
@@ -120,7 +120,7 @@ CREATE TABLE Clientes(
 	Pais VARCHAR(3), 
 	EntidadFederativa VARCHAR (60),
 	Ciudad VARCHAR(60),
-	Dirección VARCHAR(200),
+	DirecciÃ³n VARCHAR(200),
 	Telefono VARCHAR(10),
 	CorreoE VARCHAR(30)
 	--CREAMOS PRIMARY KEY
