@@ -1,4 +1,3 @@
-
 CREATE DATABASE COPIPAPE
 USE COPIPAPE
 
@@ -90,7 +89,8 @@ CREATE TABLE Empleado(
 	Telefono VARCHAR(10) UNIQUE NULL,
 	CorreoE VARCHAR (25) UNIQUE NULL,
 	Salario DECIMAL(10,2) NOT NULL CHECK (Salario >= 5393.50),
-	Genero VARCHAR(1) NOT NULL CHECK (Genero = 'M' OR Genero = 'F')
+	Genero VARCHAR(1) NOT NULL CHECK (Genero = 'M' OR Genero = 'F'),
+	AntiguedadAnios INT NOT NULL CHECK (AntiguedadAnios >=0),
 	--CREAR LLAVE PRIMARIA 
 	CONSTRAINT PK_IDEmpleado PRIMARY KEY (IDEmpleado),
 	--CREAMOS LLAVE FORANEA
@@ -168,6 +168,7 @@ CREATE TABLE VentasD(
 CREATE TABLE Empresa(
 	RSocial VARCHAR(40) NOT NULL,
 	NComercial VARCHAR(50) NOT NULL, 
+    Fundacion DATE NOT NULL,
 	TipoEmpresa VARCHAR(40) NOT NULL, 
 	Pais VARCHAR(30) NOT NULL,
 	EntidadFederativa VARCHAR(40) NOT NULL, 
@@ -177,7 +178,9 @@ CREATE TABLE Empresa(
 	Telefono VARCHAR(10) NOT NULL,
 	IDEmpleado INT NOT NULL,
 	NomRepresentanteLegal VARCHAR(100) NOT NULL,
-	NumEmpleados INT NOT NULL
+	NumEmpleados INT NOT NULL,
+	AntiguedadEmpresa INT
 	---CREAMOS LA LLAVE FORANTE QUE VA A SER REFERENCIA A LA TABLA DE EMPLEADOS 
 	CONSTRAINT FK_Empresa_IDEmpleado FOREIGN KEY (IDEmpleado)  REFERENCES Empleado(IDEmpleado)
 )
+
